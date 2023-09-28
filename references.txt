@@ -1,0 +1,3 @@
+https://pjreddie.com/darknet/yolo/
+https://github.com/pjreddie/darknet/blob/master/data/coco.names
+https://cocodataset.org/#home
