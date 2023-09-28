@@ -42,17 +42,17 @@ class Model:
         data_directory (str): Path where the model data is stored.
         classNames (list): List of class names for detected objects.
     """
-    data_directory = "data"
+    data_directory = "data/"
     classNames = []
 
     # Read class names from a file
-    classFile = os.path.join('Object-Detection/', data_directory, 'coco.names')
+    classFile = os.path.join(data_directory, 'coco.names')
     with open(classFile, "rt") as f:
         classNames = f.read().rstrip("\n").split("\n")
 
     # Model paths
-    configPath = os.path.join('Object-Detection/', data_directory, "ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt")
-    weightsPath = os.path.join('Object-Detection/', data_directory, "frozen_inference_graph.pb")
+    configPath = os.path.join(data_directory, "ssd_mobilenet_v3_large_coco_2020_01_14.pbtxt")
+    weightsPath = os.path.join(data_directory, "frozen_inference_graph.pb")
 
     # Initialize the model
     net = cv2.dnn_DetectionModel(weightsPath, configPath)
